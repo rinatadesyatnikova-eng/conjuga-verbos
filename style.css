@@ -1,0 +1,1033 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #eee8d9;
+    --paper: #f7f1e5;
+
+    --red: #c94b32;
+    --orange: #D9825B;
+    --green: #849b72;
+    --blue: #D85B45;
+    --pink: #e5ae9e;
+
+    --ink: #24211d;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 28px;
+
+    background: var(--cream);
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+}
+
+
+/* ==============================
+   APP
+   ============================== */
+
+.app {
+    position: relative;
+
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+
+    background: var(--paper);
+
+    border-radius: 38px;
+
+    overflow: hidden;
+}
+
+
+/* ==============================
+   HERO
+   ============================== */
+
+.hero {
+    position: relative;
+
+    min-height: 330px;
+    padding: 65px 70px;
+
+    background: transparent;
+    color: var(--ink);
+}
+
+.eyebrow {
+    margin: 0 0 30px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: var(--ink);
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(65px, 10vw, 105px);
+    font-weight: 900;
+
+    line-height: 0.9;
+    letter-spacing: -6px;
+
+    color: var(--red);
+}
+
+.hero p:last-child {
+    position: relative;
+    z-index: 2;
+
+    max-width: 390px;
+
+    margin: 25px 0 0;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   DECORATIVE SHAPES
+   ============================== */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+    height: 95px;
+
+    right: 90px;
+    top: 55px;
+
+    background: var(--orange);
+
+    border-radius:
+        50% 35% 55% 40%;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 85px;
+    height: 85px;
+
+    right: 180px;
+    top: 150px;
+
+    background: var(--blue);
+
+    border-radius:
+        35% 55% 40% 60%;
+
+    transform: rotate(20deg);
+}
+
+
+/* ==============================
+   SETUP
+   ============================== */
+
+.setup {
+    padding: 20px 70px 75px;
+}
+
+.setup-block {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 25px;
+
+    padding: 45px 0;
+
+    border-top: 1px solid #cfc6b5;
+}
+
+.step {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1;
+
+    color: var(--red);
+}
+
+.label {
+    margin: 0 0 7px;
+
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    color: var(--green);
+}
+
+.setup h2 {
+    margin: 0 0 25px;
+
+    font-size: 27px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+/* ==============================
+   OPTIONS
+   ============================== */
+
+.options {
+    display: grid;
+    gap: 12px;
+}
+
+.options {
+    display: grid;
+    gap: 12px;
+}
+
+.tense-options {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.type-options {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.options button {
+    min-height: 88px;
+
+    padding: 18px;
+
+    background: transparent;
+    color: var(--ink);
+
+    border: 2px solid #c9c0af;
+    border-radius: 22px;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.options button:nth-child(1) {
+    border-radius: 28px 18px 25px 17px;
+}
+
+.options button:nth-child(2) {
+    border-radius: 17px 30px 18px 27px;
+}
+
+.options button:nth-child(3) {
+    border-radius: 30px 17px 28px 20px;
+}
+
+.options button:nth-child(4) {
+    border-radius: 20px 28px 17px 30px;
+}
+.options button:nth-child(5) {
+    border-radius: 29px 19px 31px 17px;
+}
+
+.options button small {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    opacity: 0.65;
+}
+
+.options button:hover:not(:disabled) {
+    transform: translateY(-3px) rotate(-0.5deg);
+    background: var(--orange);
+}
+
+.options button.selected {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--paper);
+}
+
+.options button:disabled {
+    opacity: 0.28;
+    cursor: not-allowed;
+}
+
+
+/* ==============================
+   START
+   ============================== */
+
+.start-button,
+.check-button,
+.retry-button,
+.new-session-button {
+    display: block;
+
+    margin: 38px auto 0;
+
+    padding: 17px 38px;
+
+    background: var(--ink);
+    color: var(--paper);
+
+    border: 0;
+    border-radius: 100px;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.start-button:hover:not(:disabled),
+.check-button:hover,
+.retry-button:hover,
+.new-session-button:hover {
+    transform: translateY(-3px);
+    background: var(--red);
+}
+
+.start-button:disabled {
+    background: #cfc7b6;
+    cursor: not-allowed;
+}
+
+
+/* ==============================
+   TRAINER
+   ============================== */
+
+.trainer {
+    padding: 65px 70px 80px;
+}
+
+.trainer-top {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.progress {
+    height: 9px;
+
+    margin: 15px 0 55px;
+
+    background: #d8d0bf;
+
+    border-radius: 100px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 5%;
+    height: 100%;
+
+    background: var(--orange);
+
+    border-radius: 100px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* ==============================
+   VERB CARD
+   ============================== */
+
+.verb-card {
+    position: relative;
+
+    max-width: 580px;
+    margin: auto;
+
+    padding: 55px 45px;
+
+    background: var(--blue);
+
+    border-radius:
+        45px 30px 50px 32px;
+
+    text-align: center;
+}
+    .person {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 220px;
+    min-height: 40px;
+
+    margin: 0 auto 12px;
+    padding: 8px 14px;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    border: none;
+    border-radius: 100px;
+
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.verb {
+    margin: 0 0 35px;
+
+    font-size: 65px;
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+.answer-input {
+    width: 100%;
+
+    padding: 18px;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    border: 2px solid rgba(36, 33, 29, 0.18);
+    border-radius: 18px;
+
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    outline: none;
+}
+
+.answer-input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 4px rgba(201, 75, 50, 0.10);
+}
+
+.answer-feedback {
+    min-height: 30px;
+    margin-top: 20px;
+
+    font-weight: 700;
+}
+
+
+/* ==============================
+   RESULTS
+   ============================== */
+
+.results {
+    padding: 80px 70px;
+    text-align: center;
+}
+
+.results h2 {
+    margin: 20px 0 5px;
+
+    font-size: 85px;
+    font-weight: 900;
+
+    letter-spacing: -5px;
+
+    color: var(--red);
+}
+
+.results h2 small {
+    font-size: 20px;
+    letter-spacing: 0;
+
+    color: var(--ink);
+}
+
+.mistakes {
+    max-width: 500px;
+    margin: 35px auto;
+}
+
+
+/* ==============================
+   UTILITY
+   ============================== */
+
+.hidden {
+    display: none;
+}
+
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .app {
+        border-radius: 25px;
+    }
+
+    .hero,
+    .setup,
+    .trainer,
+    .results {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .hero {
+        min-height: 300px;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .hero::before {
+        width: 65px;
+        height: 65px;
+
+        right: 30px;
+    }
+
+    .hero::after {
+        width: 60px;
+        height: 60px;
+
+        right: 80px;
+        top: 145px;
+    }
+
+    .setup-block {
+        grid-template-columns: 1fr;
+    }
+
+    .tense-options,
+    .type-options {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==============================
+   BACKGROUND SHAPES
+   ============================== */
+
+.background-shapes {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.app {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Все фигуры специально очень бледные */
+
+.bg-shape {
+    position: absolute;
+    display: block;
+
+    opacity: 0.16;
+}
+
+
+/* LEFT — FLOWER */
+
+.shape-flower {
+    width: 150px;
+    height: 150px;
+
+    left: -45px;
+    top: 90px;
+
+    background: var(--orange);
+
+    border-radius:
+        50% 35% 50% 40%;
+    
+    transform: rotate(25deg);
+}
+
+
+/* LEFT — BLUE BLOB */
+
+.shape-blob {
+    width: 135px;
+    height: 170px;
+
+    left: 35px;
+    top: 390px;
+
+    background: var(--blue);
+
+    border-radius:
+        55% 45% 60% 35%
+        / 40% 60% 35% 65%;
+
+    transform: rotate(20deg);
+}
+
+
+/* LEFT — ARCH */
+
+.shape-arch {
+    width: 150px;
+    height: 125px;
+
+    left: -15px;
+    top: 690px;
+
+    border: 35px solid var(--red);
+    border-bottom: 0;
+
+    border-radius:
+        100px 100px 0 0;
+
+    transform: rotate(-10deg);
+}
+
+
+/* RIGHT — CLOVER */
+
+.shape-clover {
+    width: 125px;
+    height: 125px;
+
+    right: -25px;
+    top: 120px;
+
+    background: var(--green);
+
+    border-radius:
+        50% 30% 50% 30%;
+
+    transform: rotate(45deg);
+}
+
+
+/* RIGHT — STAR */
+
+.shape-star {
+    width: 150px;
+    height: 150px;
+
+    right: -30px;
+    top: 510px;
+
+    background: var(--blue);
+
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        100% 25%,
+        72% 50%,
+        100% 75%,
+        62% 66%,
+        50% 100%,
+        39% 66%,
+        0% 76%,
+        28% 50%,
+        0% 25%,
+        39% 35%
+    );
+
+    transform: rotate(12deg);
+}
+
+
+/* RIGHT — PINK ORGANIC SHAPE */
+
+.shape-pill {
+    width: 105px;
+    height: 170px;
+
+    right: 60px;
+    top: 790px;
+
+    background: var(--pink);
+
+    border-radius:
+        55% 35% 60% 40%
+        / 35% 60% 40% 65%;
+
+    transform: rotate(35deg);
+}
+.verb-card {
+    color: var(--paper);
+}
+
+.verb {
+    color: var(--paper);
+}
+
+.person {
+    background: var(--paper);
+    color: var(--ink);
+}
+.verb-card .check-button {
+    background: var(--paper);
+    color: var(--red);
+}
+
+.verb-card .check-button:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+/* ==============================
+   ANSWER HISTORY
+   ============================== */
+
+.answers-button {
+    display: block;
+
+    margin: 30px auto 20px;
+    padding: 14px 28px;
+
+    background: transparent;
+    color: var(--red);
+
+    border: 1px solid rgba(201, 75, 50, 0.35);
+    border-radius: 100px;
+
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+}
+
+.answers-history {
+    max-width: 600px;
+    margin: 30px auto;
+
+    text-align: left;
+}
+
+.answer-row {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #d8d0bf;
+}
+
+.answer-number {
+    font-size: 12px;
+    font-weight: 900;
+
+    color: #a49b8c;
+}
+
+.answer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.answer-details strong {
+    font-size: 16px;
+}
+
+.answer-details span {
+    font-size: 13px;
+}
+
+.answer-status {
+    font-weight: 800;
+}
+
+.answer-correct .answer-status {
+    color: var(--green);
+}
+
+.answer-wrong .answer-status {
+    color: var(--red);
+}
+/* ==============================
+   STEM CHANGE OPTIONS
+   ============================== */
+
+.stem-options {
+    margin-top: 28px;
+    padding: 24px;
+
+   background: rgba(216, 91, 69, 0.07);
+    border-radius: 24px;
+}
+
+.stem-label {
+    margin: 0 0 14px;
+
+    color: #B95C47;
+
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.stem-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.stem-buttons button {
+    padding: 13px 10px;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    border: none;
+    border-radius: 100px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.stem-buttons button:hover {
+    transform: translateY(-2px);
+}
+
+.stem-buttons button.selected {
+    background: #B95C47;
+    color: var(--paper);
+}
+/* ==============================
+   AMOUNT OF EXERCISES
+============================== */
+
+.amount-options {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.amount-label {
+    margin-bottom: 12px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    color: #8f6f64;
+}
+
+.amount-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.amount-buttons button {
+    width: 58px;
+    height: 40px;
+
+    border: 1.5px solid #d8b9aa;
+    border-radius: 14px;
+
+    background: #fff8ed;
+    color: #6f5148;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.amount-buttons button:hover {
+    transform: translateY(-2px);
+    border-color: #e86f5c;
+}
+
+.amount-buttons button.selected {
+    background: #e86f5c;
+    border-color: #e86f5c;
+    color: #fff8ed;
+}
+/* ==============================
+   EXIT BUTTON
+============================== */
+
+.exit-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+
+    color: #9b776b;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.exit-button:hover {
+    color: #d44b32;
+    transform: translateX(-3px);
+}
+/* ==============================
+   ORTHOGRAPHIC OPTIONS
+============================== */
+
+.orthographic-options {
+    margin-top: 22px;
+    text-align: center;
+}
+
+.orthographic-label {
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #8f6f64;
+}
+
+.orthographic-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.orthographic-buttons button {
+    min-width: 68px;
+    height: 40px;
+    padding: 0 15px;
+
+    border: 1.5px solid #d8b9aa;
+    border-radius: 14px;
+
+    background: #fff8ed;
+    color: #6f5148;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.orthographic-buttons button:hover {
+    transform: translateY(-2px);
+    border-color: #e86f5c;
+}
+
+.orthographic-buttons button.selected {
+    background: #e86f5c;
+    border-color: #e86f5c;
+    color: #fff8ed;
+}
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 100%;
+        padding: 28px 18px;
+        border-radius: 28px;
+    }
+
+    .hero {
+        margin-bottom: 32px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+        line-height: 0.95;
+    }
+
+    .hero p {
+        max-width: 100%;
+    }
+}
+.ir-special-button.hidden {
+    display: none !important;
+}
+
+/* Keep the entire verb visible inside its card on narrow screens. */
+.verb-card {
+    container-type: inline-size;
+    min-width: 0;
+}
+
+.verb {
+    max-width: 100%;
+    font-size: min(65px, 10cqi);
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+}
+
+.person {
+    max-width: 100%;
+}
+
+@media (max-width: 650px) {
+    .verb-card {
+        padding: 36px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .trainer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

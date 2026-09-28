@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <title>Conjuga — Entrenador de verbos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-shapes" aria-hidden="true">
+    <span class="bg-shape shape-flower"></span>
+    <span class="bg-shape shape-blob"></span>
+    <span class="bg-shape shape-arch"></span>
+    <span class="bg-shape shape-clover"></span>
+    <span class="bg-shape shape-star"></span>
+    <span class="bg-shape shape-pill"></span>
+</div>
+
+<main class="app">
+
+    <header class="hero">
+        <p class="eyebrow">ENTRENADOR DE CONJUGACIÓN</p>
+        <h1>Conjuga</h1>
+        <p>
+            Practica los verbos españoles hasta que
+            las formas salgan solas.
+        </p>
+    </header>
+
+
+    <!-- SETUP -->
+
+<section class="setup" id="setup">
+
+    <!-- 01 MODO / FORMA -->
+
+    <div class="setup-block">
+        <span class="step">01</span>
+
+        <div>
+            <p class="label">MODO / FORMA</p>
+            <h2>¿Qué quieres practicar?</h2>
+
+            <div class="options mode-options">
+
+                <button class="selected"
+                        data-value="indicativo">
+                    Indicativo
+                </button>
+
+                <button data-value="subjuntivo">
+                    Subjuntivo
+                </button>
+
+                <button data-value="imperativo">
+                    Imperativo
+                </button>
+
+                <button data-value="no-personales">
+                    Formas no personales
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 02 TIEMPO -->
+
+    <div class="setup-block">
+        <span class="step">02</span>
+
+        <div>
+            <p class="label">TIEMPO</p>
+            <h2>Elige el tiempo</h2>
+
+            <div class="options tense-options">
+
+                <button class="selected"
+                        data-value="presente">
+                    Presente
+                </button>
+
+                <button data-value="indefinido">
+                    Indefinido
+                </button>
+
+                <button data-value="imperfecto">
+                    Imperfecto
+                </button>
+
+                <button data-value="futuro">
+                    Futuro
+                </button>
+
+                <button data-value="condicional">
+                    Condicional
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+        <div class="setup-block">
+            <span class="step">03</span>
+
+            <div>
+                <p class="label">TIPO DE VERBOS</p>
+                <h2>Elige tu entrenamiento</h2>
+
+                <div class="options type-options">
+                   
+
+                    <button data-value="regular">
+                        Regulares
+                        <small>-ar,  -er,  -ir</small>
+                    </button>
+
+                    <button data-value="stem">
+                        Cambio vocálico
+                        <small>e→ie,  o→ue,  e→i</small>
+                    </button>
+                    <button data-value="orthographic">
+    Cambios ortográficos
+    <small>-zco,  -jo,  -go,  -y</small>
+</button>
+</button>
+
+                    <button data-value="irregular">
+                        Irregulares
+                        <small>tener,  hacer,  venir...</small>
+                    </button>
+
+                    <button data-value="all">
+                        Todo
+                        <small>modo mixto</small>
+                    </button>
+
+                </div>
+                <div class="stem-options hidden">
+    <p class="stem-label">ELIGE EL CAMBIO</p>
+
+    <div class="stem-buttons">
+        <button data-change="e-ie">e → ie</button>
+        <button data-change="o-ue">o → ue</button>
+        <button data-change="e-i">e → i</button>
+        
+        <button
+    data-change="ir-special"
+    class="ir-special-button"
+>
+    
+    <small>dormir, morir, sentir, preferir, mentir</small>
+</button>
+        <button data-change="all">Todo</button>
+    </div>
+</div>
+
+<div class="amount-options">
+    <p class="amount-label">NÚMERO DE EJERCICIOS</p>
+
+    <div class="amount-buttons">
+        <button data-amount="10">10</button>
+        <button data-amount="20" class="selected">20</button>
+        <button data-amount="30">30</button>
+    </div>
+</div>
+            
+
+        <button class="start-button" disabled>
+            EMPEZAR · 20 VERBOS
+        </button>
+
+    </section>
+
+
+    <!-- TRAINER -->
+
+    <section class="trainer hidden" id="trainer">
+
+        <div class="trainer-top">
+
+    <button class="exit-button" type="button">
+        ← SALIR
+    </button>
+
+    <span class="session-type"></span>
+
+    <span class="question-counter">
+        01 / 20
+    </span>
+
+</div>
+
+        <div class="progress">
+            <div class="progress-fill"></div>
+        </div>
+
+        <div class="verb-card">
+
+            <p class="person">nosotros</p>
+
+            <h2 class="verb">PEDIR</h2>
+
+            <input
+                class="answer-input"
+                type="text"
+                autocomplete="off"
+                placeholder="Escribe la forma..."
+            >
+
+            <button class="check-button">
+                COMPROBAR
+            </button>
+
+            <div class="answer-feedback"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULTS -->
+
+    <section class="results hidden" id="results">
+
+        <p class="label">SESIÓN COMPLETADA</p>
+
+        <h2>
+            <span class="final-score">0</span>
+           <small>
+    / <span class="final-total">20</span>
+</small>
+        </h2>
+
+        <p class="accuracy"></p>
+
+        <div class="mistakes"></div>
+        <button class="answers-button">
+    VER MIS RESPUESTAS
+</button>
+
+<div class="answers-history hidden"></div>
+
+        <button class="retry-button">
+            REPETIR MIS ERRORES
+        </button>
+
+        <button class="new-session-button">
+            NUEVA SESIÓN
+        </button>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
